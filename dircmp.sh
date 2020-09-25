@@ -35,9 +35,9 @@ source_diff_count=$(echo "$result" | grep -c "<") #Only in <src>
 source_file_count=$(wc -l "$src_name"_files.txt | cut -d" " -f6) # Cut -f6 to extract number (neither tab nor spaces)
 
 if [ "$source_diff_count" -eq 0 ]; then
-	echo "All source files are present in ${2}"
+	echo "All files from ${source_diff_count} are present in ${2}"
 elif [ "$source_diff_count" -eq "$source_file_count" ]; then
-	echo "None of the source files are present in ${2}"
+	echo "None of the files from ${source_diff_count} are present in ${2}"
 else
 	echo "${source_diff_count} files are not present in ${2} folder\nCheck dircmp_${src_name}-${dst_name}_not_present.txt"
 	echo "$result" | grep "<" | cut -d" " -f2 > dircmp_"$src_name"-"$dst_name"_not_present.txt
