@@ -20,11 +20,11 @@ dst_name=$(echo "$2" | tr ' ' '_' | rev | cut -d "/" -f2,3,4 | rev | tr '/' '-')
 #dst_name=$(basename "$2")
 # Find files and delete path to ensure similarity of files: 
 # src and dst names are appended to allow multiple istances of the program without overwriting
-if [[ ! -f "$src_name"_files.txt || ! -s "$src_name"_files.txt ]]; then
+if [ ! -f "$src_name"_files.txt || ! -s "$src_name"_files.txt ]; then
 	echo "Listing ${1}..." 
 	find "$1" -type f ! -name ".*" -exec basename {} \; | sort > "$src_name"_files.txt
 fi
-if [[ ! -f "$dst_name"_files.txt || ! -s "$dst_name"_files.txt ]]; then
+if [ ! -f "$dst_name"_files.txt || ! -s "$dst_name"_files.txt ]; then
 	echo "Listing ${2}..."
 	find "$2" -type f ! -name ".*" -exec basename {} \; | sort > "$dst_name"_files.txt
 fi
