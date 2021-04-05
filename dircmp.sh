@@ -40,5 +40,6 @@ elif [ "$source_diff_count" -eq "$source_file_count" ]; then
 	echo "None of the files from ${1} are present in ${2}"
 else
 	echo "${source_diff_count} files are not present in ${2} folder\nCheck dircmp_${src_name}-${dst_name}_not_present.txt"
-	echo "$result" | grep "<" | cut -d" " -f2 > dircmp_"$src_name"-"$dst_name"_not_present.txt
+	# Problem with cut by whitespaces: select src lines and delete diff symbol '>'
+	echo "$result" | grep "<" | sed 's/\<\ //g' > dircmp_"$src_name"-"$dst_name"_not_present.txt
 fi
