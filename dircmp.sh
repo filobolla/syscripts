@@ -30,7 +30,7 @@ if [ ! -f "$dst_name"_files.txt ] || [ ! -s "$dst_name"_files.txt ]; then
 fi
 
 result=$(diff -i "$src_name"_files.txt "$dst_name"_files.txt) # Case insensitive diff to avoid JPG/jpg differences
-dest_diff_count=$(echo "$result" | grep -c ">") #Only in <dest>
+#dest_diff_count=$(echo "$result" | grep -c ">") #Only in <dest>
 source_diff_count=$(echo "$result" | grep -c "<") #Only in <src>
 source_file_count=$(wc -l "$src_name"_files.txt | cut -d" " -f6) # Cut -f6 to extract number (neither tab nor spaces)
 
