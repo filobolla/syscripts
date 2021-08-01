@@ -10,6 +10,7 @@ If you want to reach your scripts globally, add the folder path to the $PATH var
   In your terminal, type
   `export PATH=$PATH:/path/to/syscripts`
 - ### macOS
+  Same as for UNIX, or
   1. Edit file `/etc/paths`
   2. Add /path/to/syscripts line
   
