@@ -1,7 +1,7 @@
 # syscripts
 
 ## Description
-Collection of unix scripts for sysadmin tasks, including folder comparison, rsync backups, Telegram alerts
+Collection of unix scripts for sysadmin tasks, including folder comparison, rsync backups, Telegram alerts and macOS Folder Actions
 
 ## Installation
 Clone the repository in the desired path (eg. the home directory or a `.scripts` folder)
