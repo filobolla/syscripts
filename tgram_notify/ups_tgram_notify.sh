@@ -11,7 +11,7 @@ HEADER="<b>${PGRM}</b> (${HOST%%.*}) says:\n"
 DESCRIPTION=$(echo -e $2)
 message="${HEADER}${DESCRIPTION}"
 
-curl -s --show-error \
+curl -s \
 -X POST \
 -H 'Content-Type: application/json' \
 -d '{
@@ -19,4 +19,4 @@ curl -s --show-error \
 "parse_mode":"HTML", 
 "text":"'"${message}"'
 "}' \
-https://api.telegram.org/bot${BOT_TOKEN}/sendMessage 2>&1 | logger -i -t "$(basename $0)"
+https://api.telegram.org/bot${BOT_TOKEN}/sendMessage | logger -i -t "$(basename $0)"
